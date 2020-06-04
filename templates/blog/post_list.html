@@ -1,0 +1,37 @@
+
+    
+<div class="container">
+    <div class="row">
+        {% for object in object_list %}
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        {{object.username}}
+                    </div>
+                    <ul>
+                            <label>Post Text</label>
+                            <div class="card-text">
+                                {{object.text}}
+                            </div>
+                          <br>
+                          <label>Create Text</label>
+                          <div class="card-text">
+                              {{ object.created_at}}
+                          </div>
+                          <label>Update Text</label>
+                          <div class="card-text">
+                            {{object.updated_at}}
+                          </div> 
+                        </ul>
+                    
+                    
+                    <a href="blogpost_update/{{object.id}}" class="btn btn-warning">Update</a>
+                    <a class="btn atc btn-danger" href="blog/{{object.id}}/post_delete" >Delete</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+  
